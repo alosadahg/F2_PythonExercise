@@ -4,6 +4,7 @@ def decToBinary(dec):
 
     if dec == 0:
         bin = '0'
+
     else:
         while dec > 0:
             r = dec % 2
