@@ -49,8 +49,8 @@ def decToHex(dec):
     hex = ""
 
     while dec > 0:
-        remainder = dec % 16
-        hex = hex_chars[remainder] + hex
+        r = dec % 16
+        hex = hex_chars[r] + hex
         dec //= 16
 
     print("Hexadecimal representation of", orig, ": ", hex)
