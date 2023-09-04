@@ -31,7 +31,7 @@ def binaryToN(bin, type):
     elif(f_char == 'h') or (f_char == 'H'):
         decToHex(dec)
     else:
-        print("Binary representation of", orig, ": ", dec)
+        print("Decimal representation of", orig, ": ", dec)
 
 def decToOctal(dec):
     orig = dec
