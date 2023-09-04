@@ -65,7 +65,7 @@ def main():
                      "\n4. Decimal to Hexadecimal"
                      "\n5. Exit")
         scan = input("Select a conversion to perform: ")
-        if(scan == 5):
+        if(scan == '5'):
             print("Thank you for using my conversion program!")
             return
         n = input("Please enter a value: ")
