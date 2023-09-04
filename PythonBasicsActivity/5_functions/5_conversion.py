@@ -36,10 +36,14 @@ def decToOctal(dec):
     orig = dec
     oct = ""
 
+    if (dec == 0):
+        oct = "0"
+
     while dec > 0:
         r = dec % 8
         oct = str(r) + oct
         dec //= 8
+
 
     print("Octal representation of", orig, ": ", oct)
 
@@ -47,6 +51,9 @@ def decToHex(dec):
     orig = dec
     hex_chars = "0123456789ABCDEF"
     hex = ""
+
+    if (dec == 0):
+        hex = "0"
 
     while dec > 0:
         r = dec % 16
@@ -68,24 +75,25 @@ def main():
         if(scan == '5'):
             print("Thank you for using my conversion program!")
             return
-        n = input("Please enter a value: ")
-        if scan == '1':
-            n = int (n)
-            decToBinary(n)
-        elif scan == '2':
-            t = input("Please enter a type (Decimal, Octal, or Hexadecimal): ")
-            binaryToN(n, t)
-        elif scan == '3':
-            n = int(n)
-            decToOctal(n)
-        elif scan == '4':
-            n = int(n)
-            decToHex(n)
-        else:
+        if int(scan) not in range(1,6):
             print("Invalid input. Please try again.")
-        again = input("Perform another conversion? Y/N: ").lower()
-        if (again[0] != 'y'):
-            flag = False
+        else:
+            n = input("Please enter a value: ")
+            if scan == '1':
+                n = int (n)
+                decToBinary(n)
+            elif scan == '2':
+                t = input("Please enter a type (Decimal, Octal, or Hexadecimal): ")
+                binaryToN(n, t)
+            elif scan == '3':
+                n = int(n)
+                decToOctal(n)
+            elif scan == '4':
+                n = int(n)
+                decToHex(n)
+            again = input("Perform another conversion? Y/N: ").lower()
+            if (again[0] != 'y'):
+                flag = False
     print("Thank you for using my conversion program!")
     return
 
