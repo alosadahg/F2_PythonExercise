@@ -16,6 +16,7 @@ def binaryToN(bin, type):
     orig = bin
     dec = 0
     i = 0
+    bin = int(bin)
 
     while (bin != 0):
         val = bin % 10
@@ -34,20 +35,25 @@ def binaryToN(bin, type):
 def decToOctal(dec):
     orig = dec
     oct = ""
+
     while dec > 0:
         r = dec % 8
         oct = str(r) + oct
         dec //= 8
+
     print("Octal representation of", orig, ": ", oct)
 
 def decToHex(dec):
     orig = dec
-    oct = ""
+    hex_chars = "0123456789ABCDEF"
+    hex = ""
+
     while dec > 0:
-        r = dec % 16
-        oct = str(r) + oct
+        remainder = dec % 16
+        hex = hex_chars[remainder] + hex
         dec //= 16
-    print("Hexadecimal representation of", orig, ": ", bin)
+
+    print("Hexadecimal representation of", orig, ": ", hex)
 
 def main():
     flag = True
@@ -77,9 +83,11 @@ def main():
             decToHex(n)
         else:
             print("Invalid input. Please try again.")
-        again = input("Perform another conversion? Y/N: ")
-        if (again[0] != 'Y') or (again[0] != 'y'):
+        again = input("Perform another conversion? Y/N: ").lower()
+        if (again[0] != 'y'):
             flag = False
+    print("Thank you for using my conversion program!")
+    return
 
 if __name__ == '__main__':
     main()
